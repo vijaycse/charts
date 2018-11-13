@@ -64,6 +64,9 @@ spec:
             - containerPort: {{ .Values.Master.ContainerPort }}
             - containerPort: {{ .Values.WebUi.ContainerPort }}
           resources:
+            limits:
+              cpu: "{{ .Values.Master.Cpu }}"
+              memory: "{{ .Values.Master.Memory }}"
             requests:
               cpu: "{{ .Values.Master.Cpu }}"
               memory: "{{ .Values.Master.Memory }}"
